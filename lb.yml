@@ -1,0 +1,6 @@
+- hosts: lb
+  tasks:
+   - package: "name=haproxy state=present"
+   - copy: "src=/root/haproxy.cfg dest=/etc/haproxy/haprocy.cfg"
+   - service: "name=haproxy state=started"
+   - firewalld: "state=enabled port=80/tcp immediate=yes"

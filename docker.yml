@@ -1,0 +1,5 @@
+- hosts: lb
+  tasks:
+   - package: "name=docker-ce state=present"
+   - service: "name=docker state=started enabled=yes"
+
